@@ -1,11 +1,13 @@
-/*
+ /*
 Sparse Matrix Addition
 Rahul A B
 S3 CSA
 52
 */
+
 #include<stdio.h>
 #include<stdlib.h>
+
 void main()
 {
 	int r1=0,c1=0,r2=0,c2=0,i=0,j=0,k=1,count1=0,count2=0;
