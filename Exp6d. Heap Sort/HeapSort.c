@@ -1,17 +1,55 @@
 /*
-	DFS
+	HeapSort
 	Rahul A B
 	S3 CSA
 	52
 */
 
 #include<stdio.h>
-#include<stdlib.h>
 #define Size 100
 
-int maxSize,Heap[Size],i,largest,left,right;
+int maxSize,Heap[Size];
 
-void readHeap()
+void heapify(int a,int i)
+{
+	int largest,left,right,temp;
+	largest = i;
+	left = 2*i+1;
+	right = 2*i+2;
+	if (left < a && Heap[left] > Heap[largest])
+	{
+		largest = left;
+	}
+	if (right < a && Heap[right] > Heap[largest])
+	{
+		largest = right;
+	}
+	if (largest != i)
+	{
+		temp = Heap[i];
+		Heap[i] = Heap[largest];
+		Heap[largest] = temp;
+		heapify(a,largest);
+	}
+}
+
+int HeapSort(int n)
+{
+	int i,temp;
+	for ( i = n/2-1 ; i >= 0 ; i-- )
+	{
+		heapify(n,i);
+	}
+	for ( i = n-1 ; i >= 0 ; i-- )
+	{
+		temp=Heap[0];
+		Heap[0]=Heap[i];
+		Heap[i]=temp;
+		heapify(i,0);
+	}
+}
+
+void main()
 {
 	printf("Enter The Size Of List : ");
 	scanf("%d",&maxSize);
@@ -19,51 +57,14 @@ void readHeap()
 	for (int i=0;i<maxSize;i++)
 	{
 		scanf("%d",&Heap[i]);
-	}	
-}
-
-void heapify(int n,int i)
-{
-	largest = i;
-	left = 2*i+1;
-	right = 2*i+2;
-	if (left<n && Heap[left]>Heap[largest])
-	{
-		largest = left;
 	}
-	if (right<n && Heap[right]>Heap[largest])
+	printf("Array Stored :\t");	
+	for(int i=0;i<maxSize;i++)
 	{
-		largest = right;
+		printf("%d\t",Heap[i]);
 	}
-	if (largest!=i)
-	{
-		int temp = Heap[i];
-		Heap[i] = Heap[largest];
-		Heap[largest] = temp;
-		heapify(n,largest);
-	}
-}
-
-int heapSort(int n)
-{
-	for (i=n/2-1;i>=0;i--)
-	{
-		heapify(n,i);
-	}
-	for (i=n-1;i>=0;i--)
-	{
-		int temp=Heap[0];
-		Heap[0]=Heap[i];
-		Heap[i]=temp;
-		heapify(n,i);
-	}
-}
-
-void main()
-{
-	readHeap();
-	heapSort(maxSize);
-	printf("Heap Sorting :\t");	
+	HeapSort(maxSize);
+	printf("\nHeap Sorted Array :\t");	
 	for(int i=0;i<maxSize;i++)
 	{
 		printf("%d\t",Heap[i]);
