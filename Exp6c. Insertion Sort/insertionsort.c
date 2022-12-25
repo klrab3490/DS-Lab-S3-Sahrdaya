@@ -9,9 +9,7 @@
 #include<stdlib.h>
 
 void insertionsort(int array[],int size);
-
-void main()
-{
+void main(){
 	int a=0,i=0;
 	printf("Insertion Sort\nEnter The Length of Array : ");
 	scanf("%d",&a);
@@ -23,17 +21,13 @@ void main()
 	}
 	printf("\nArray Before Sorting :\t");
 	for (int i=0;i<a;i++)
-	{
 		printf("%d\t",array[i]);
-	}
 	insertionsort(array,a);
 }	
 
-void insertionsort(int array[],int size)
-{
+void insertionsort(int array[],int size){
 	int i=0,j=0,key;
-	for(int i=1;i<size;i++)
-	{
+	for(int i=1;i<size;i++){
 		key = array[i];
 		j=i-1;
 		while (j>=0 && array[j]>key)
@@ -45,7 +39,5 @@ void insertionsort(int array[],int size)
 	}
 	printf("\nArray After Sorting :\t");
 	for (int i=0;i<size;i++)
-	{
 		printf("%d\t",array[i]);
-	}
 }

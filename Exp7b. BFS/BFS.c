@@ -12,44 +12,34 @@
 int matrix[size][size],maxSize,i,j,visited[size],FRONT=-1,REAR=-1,Queue[size],item;
 void enqueue();
 int dequeue();
-void readMatrix()
-{
-	printf("Adjustancy Matrix\nEnter the number of vertices : ");
+void readMatrix(){
+	printf("BFS-Breadth First Search Using Adjustancy Matrix\nEnter the number of vertices : ");
 	scanf("%d",&maxSize);
 	printf("Enter Matrix Values\n");
-	for(int i=0;i<maxSize;i++)
-	{
+	for(int i=0;i<maxSize;i++){
 		for(int j=0;j<maxSize;j++)
-		{
 			scanf("%d",&matrix[i][j]);
-		}
 	}	
 }
 
-void BFS(int v)
-{
+void BFS(int v){
 	int i=0;
 	printf("BFS Result :\t%d",v);
 	visited[v]=1;
 	enqueue(v);
-	while(FRONT!=-1)
-	{
+	while(FRONT!=-1){
 		v=dequeue();
-		for (int i=1;i<=maxSize;i++)
-		{
-			if (matrix[v][i] && !visited[i])
-			{
+		for (int i=1;i<=maxSize;i++){
+			if (matrix[v][i] && !visited[i]){
 				visited[i]=1;
 				enqueue(i);
 				printf("\t%d",i);
 			}		
 		}
 	}
-	
 }
 
-void main()
-{
+void main(){
 	readMatrix();
 	BFS(0);
 	printf("\n");
@@ -63,9 +53,7 @@ void enqueue(int item)
 		REAR=0;
 	}
 	else
-	{
 		REAR = REAR + 1; 
-	}
 	Queue[REAR]=item;
 }
  
@@ -78,8 +66,6 @@ int dequeue()
 		REAR = -1;
 	}
 	else
-	{
 		FRONT = FRONT + 1; 
-	}
 	return item;
 }

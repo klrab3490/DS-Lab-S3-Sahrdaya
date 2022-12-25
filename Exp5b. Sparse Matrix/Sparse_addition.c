@@ -22,14 +22,11 @@ void main()
 	int A1[r1][c1];
 	for(i=0;i<r1;i++)
 	{
+        printf("\n");
 		for(j=0;j<c1;j++)
 		{
 			printf("A[%d][%d] = ",i,j);
 			scanf("%d",&A1[i][j]);
-            if (j==(c1-1))
-            {
-                printf("\n");
-            }
 		}
 	}
     for(int i=0;i<r1;i++)
@@ -70,14 +67,11 @@ void main()
 	int B1[r2][c2];
 	for(i=0;i<r2;i++)
 	{
+        printf("\n");
 		for(j=0;j<c2;j++)
 		{
 			printf("B[%d][%d] = ",i,j);
 			scanf("%d",&B1[i][j]);
-            if (j==(c2-1))
-            {
-                printf("\n");
-            }
 		}
 	}
     for(int i=0;i<r1;i++)
@@ -108,10 +102,9 @@ void main()
             }
         }
     }
-/*
-    Printing Sparse Matrix
-*/
-    printf("Sparse Matrix A\n");
+//    Printing Sparse Matrix
+
+    printf("\nSparse Matrix A\n");
     for(int i=0;i<=count1;i++)
     {
         for (int j=0;j<3;j++)

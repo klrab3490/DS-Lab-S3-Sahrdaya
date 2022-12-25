@@ -24,9 +24,7 @@ void displayArray()
 {
 	int i;
 	for (int i=0;i<maxSize;i++)
-	{
 		printf("%d\t",array[i]);
-	}
 }
 void selectionSort()
 {
@@ -37,9 +35,7 @@ void selectionSort()
 		for (int j=i+1;j<maxSize;j++)
 		{
 			if (array[j]<array[small])
-			{
 				small=j;
-			}
 		}
 		temp = array[i];
 		array[i] = array[small];
@@ -50,7 +46,7 @@ void selectionSort()
 void main()
 {
 	maxSize = 0;
-	printf("Insertion Sorting \nEnter the Size of Array : ");
+	printf("Selection Sorting \nEnter the Size of Array : ");
 	scanf("%d",&maxSize);
 	readArray();
 	printf("\nArray Before Sorting :\t");

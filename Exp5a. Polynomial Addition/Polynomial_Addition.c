@@ -40,21 +40,21 @@ void main()
 		scanf("%d",&second[i].exp);
 	}
 	// Print both Polynomials
-	printf("Polynomials are: \nFirst Polynomial : ");
+	printf("\nPolynomials are: \nPolynomial 1 :");
 	for(i=0; i<n1; i++)
 	{
 		if (i!=0)
-			printf("%+dx^%d",first[i].coeff,first[i].exp);
+			printf("+ %dx^%d ",first[i].coeff,first[i].exp);
 		else
-			printf("%dx^%d",first[i].coeff,first[i].exp);
+			printf(" %dx^%d ",first[i].coeff,first[i].exp);
 	}
-	printf("\nSecond Polynomial : ");
+	printf("\nPolynomial 2 :");
 	for(j=0; j<n2; j++)
 	{
 		if (j!=0)
-			printf("%+dx^%d",second[j].coeff,second[j].exp);
+			printf("+ %dx^%d ",second[j].coeff,second[j].exp);
 		else
-			printf("%dx^%d",second[j].coeff,second[j].exp);
+			printf(" %dx^%d ",second[j].coeff,second[j].exp);
 	}
 	//Addition
 	i=0;
@@ -101,14 +101,13 @@ void main()
 		k++;
 	}
 	//Result
-	printf("\nResultant Polynomial : ");
+	printf("\nResultant Polynomial :");
 	for(l=0; l<k; l++)
 	{
 		if (l!=0)
-			printf("%+dx^%d",result[l].coeff,result[l].exp);
+			printf("+ %dx^%d ",result[l].coeff,result[l].exp);
 		else
-			printf("%dx^%d",result[l].coeff,result[l].exp);
+			printf(" %dx^%d ",result[l].coeff,result[l].exp);
 	}
 	printf("\n");
 }
-
